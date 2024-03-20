@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Github repository list
+This project is a Github repositories manager. It is developed using TypeScript, React and other modern web development tools.
+## Purpose
+The goal of this tool is to provide an easy to use interface for managing Github repositories.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+1. Clone the repository to your local machine using git:
 
-Currently, two official plugins are available:
+    ```bash
+    gh repo clone sulhadin/github-repositories
+    ```
+2. Install the dependencies using npm:
+    ```bash
+    cd github-repositories
+    yarn install
+    yarn dev
+    ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Scripts
 
-## Expanding the ESLint configuration
+Here are the npm scripts you can use to manage this project:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- `npm run dev` - Starts the Vite development server.
+- `npm run build` - Compiles TypeScript files and builds the project using Vite.
+- `npm run lint` - Finds and automatically fixes potential issues in the code using ESLint.
+- `npm run preview` - Previews the built project using Vite.
+- `npm run prettier` - Formats your code using Prettier.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+## TODO
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Complete the documentation: While the basic setup and usage instructions are included in this README file, there is more work to be done to fully document the features, architecture, and design decisions of the project.
+- Add tests: Automated testing is an important part of maintaining code quality and preventing regressions when new changes are made. The project currently lacks a testing suite, which is an issue that needs to be addressed.
+
+This project is still under development. More instructions will be added as more features are built.
