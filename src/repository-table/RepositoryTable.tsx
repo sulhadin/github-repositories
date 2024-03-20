@@ -1,36 +1,20 @@
 import React from "react";
 
-import Table from "./components/table";
-import Index from "./components/input";
-import RadioButton from "./components/radio";
-import Pagination from "./components/pagination";
 import useRepositoryTable from "./useRepositoryTable.ts";
+import Search from "./search/Search.tsx";
+import Pagination from "./pagination/Pagination.tsx";
+import Filter from "./filter/Filter.tsx";
+import Table from "../ui/table/index.tsx";
 
-const RepoTable: React.FC = () => {
-  const {
-    handlePaginationChange,
-    handleRadioChange,
-    handleChange,
-    getSortedAs,
-    handleSorting,
-    repositories,
-    isLoading,
-    selectParams,
-  } = useRepositoryTable();
+const RepositoryTable: React.FC = () => {
+  const { getSortedAs, handleSorting, repositories, isLoading } =
+    useRepositoryTable();
 
   return (
     <div className={"flex flex-col gap-4 p-5"}>
       <div className={"flex gap-4"}>
-        <Index
-          placeholder={"Search some github repository"}
-          initialValue={selectParams.keyword}
-          onChange={handleChange}
-        />
-        <RadioButton
-          initialValue={selectParams.language}
-          values={["javascript", "scala", "python"]}
-          onChange={handleRadioChange}
-        />
+        <Search />
+        <Filter />
       </div>
       <Table<Repository>
         isLoading={isLoading}
@@ -70,16 +54,9 @@ const RepoTable: React.FC = () => {
         onSorting={handleSorting}
       />
 
-      <Pagination
-        onPageChange={handlePaginationChange}
-        pagination={{
-          page: selectParams.currentPage,
-          pageCount: repositories?.total_count || 0,
-          perPage: selectParams.perPage,
-        }}
-      />
+      <Pagination pageCount={repositories?.total_count || 0} />
     </div>
   );
 };
 
-export default RepoTable;
+export default RepositoryTable;

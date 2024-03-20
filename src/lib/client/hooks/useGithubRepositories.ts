@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import client from "../client";
+import client from "src/client";
 
 /**
  * It is designed to handle github repositories requests. Not used. just a boilerplate.!!!

@@ -1,4 +1,4 @@
-import GithubApiClient from "./GithubApiClient.ts";
+import GithubApiClient from "src/lib/client/GithubApiClient.ts";
 
 /**
  * This http client is an alternative solution to RTK.
