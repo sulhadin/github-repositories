@@ -1,0 +1,14 @@
+.pagination {
+  @apply flex items-center gap-2;
+}
+
+.pagination .buttons {
+  @apply flex gap-2 items-center;
+}
+
+.pagination .buttons button {
+  @apply hover:opacity-70 active:opacity-100 px-[10.5px] py-[5px] text-xs select-none font-medium rounded-lg text-neutral-800;
+}
+.pagination .buttons button.arrow-button {
+  @apply p-1.5 flex items-center;
+}
